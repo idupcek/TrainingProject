@@ -19,6 +19,11 @@
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
+            <telerik:RadFormDecorator ID="RadFormDecorator1" Runat="server" DecoratedControls="All" Skin="Bootstrap" />
+            <telerik:RadSkinManager ID="RadSkinManager1" Runat="server" Skin="Bootstrap">
+            </telerik:RadSkinManager>
+            <br />
+            <br />
             <telerik:RadButton ID="BackButton" runat="server" Text="Back" Width="80px">
             </telerik:RadButton>
             <br />
@@ -41,7 +46,7 @@
                         <tr>
                             <td class="auto-style2">Gender:</td>
                             <td class="auto-style2">
-                                <telerik:RadComboBox ID="GenderComboBox" Runat="server" SelectedValue='<%# Bind("Gender") %>' ValidationGroup="Update">
+                                <telerik:RadComboBox ID="GenderComboBox" Runat="server" SelectedValue='<%# Bind("Gender") %>' ValidationGroup="Update" AutoPostBack="True">
                                     <Items>
                                         <telerik:RadComboBoxItem runat="server" Selected="True" />
                                         <telerik:RadComboBoxItem runat="server" Text="Male" Value="Male" />
@@ -54,7 +59,7 @@
                         <tr>
                             <td>Current Status:</td>
                             <td>
-                                <telerik:RadComboBox ID="StatusComboBox" Runat="server" SelectedValue='<%# Bind("CurrentStatus") %>' ValidationGroup="Update">
+                                <telerik:RadComboBox ID="StatusComboBox" Runat="server" SelectedValue='<%# Bind("CurrentStatus") %>' ValidationGroup="Update" AutoPostBack="True">
                                     <Items>
                                         <telerik:RadComboBoxItem runat="server" Selected="True" />
                                         <telerik:RadComboBoxItem runat="server" Text="Current" Value="Current" />
@@ -71,7 +76,7 @@
                             </td>
                         </tr>
                     </table>
-&nbsp;<telerik:RadButton ID="SaveRadButton" runat="server" CommandName="Update" Text="Save" Width="80px">
+&nbsp;<telerik:RadButton ID="SaveRadButton" runat="server" CommandName="Update" Text="Save" Width="80px" ValidationGroup="Update">
                     </telerik:RadButton>
                     <telerik:RadButton ID="RadButton2" runat="server" CommandName="Cancel" Text="Cancel" Width="80px">
                     </telerik:RadButton>
@@ -96,7 +101,7 @@
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <table class="auto-style1">
+                    <table class="auto-style1" border="0">
                         <tr>
                             <td class="auto-style2">First Name:</td>
                             <td class="auto-style2">

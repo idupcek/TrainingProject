@@ -64,7 +64,7 @@
                     <tr>
                         <td>Gender:</td>
                         <td>
-                            <telerik:RadComboBox ID="DefaultGenderRadComboBox" Runat="server" SelectedValue='<%# Bind("Gender") %>'>
+                            <telerik:RadComboBox ID="DefaultGenderRadComboBox" Runat="server" SelectedValue='<%# Bind("Gender") %>' AutoPostBack="True">
                                 <Items>
                                     <telerik:RadComboBoxItem runat="server" Selected="True" />
                                     <telerik:RadComboBoxItem runat="server" Text="Male" Value="Male" />
@@ -77,7 +77,7 @@
                     <tr>
                         <td>Current Status:</td>
                         <td>
-                            <telerik:RadComboBox ID="DefaultStatusComboBox" Runat="server" SelectedValue='<%# Bind("CurrentStatus") %>'>
+                            <telerik:RadComboBox ID="DefaultStatusComboBox" Runat="server" SelectedValue='<%# Bind("CurrentStatus") %>' AutoPostBack="True">
                                 <Items>
                                     <telerik:RadComboBoxItem runat="server" Selected="True" />
                                     <telerik:RadComboBoxItem runat="server" Text="Current" Value="Current" />
@@ -95,10 +95,11 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <telerik:RadButton ID="RadButton2" runat="server" CommandName="Update" Text="Save" Width="70px">
+                            <telerik:RadButton ID="RadButton2" runat="server" CommandName="Update" Text="Save" Width="70px" ValidationGroup="Update">
                             </telerik:RadButton>
                             <telerik:RadButton ID="RadButton3" runat="server" CommandName="Cancel" Text="Cancel" Width="70px">
                             </telerik:RadButton>
+                            <br />
                         </td>
                     </tr>
                 </table>
